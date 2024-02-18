@@ -25,8 +25,6 @@ void mouseReleased(){
   releasedRobotButtons();
 }
 void keyPressed(){
-  //println(key,keyCode);
-  
   switch (key){
     case '0':
       butK0Click();
