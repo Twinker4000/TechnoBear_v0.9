@@ -1,4 +1,3 @@
-//int Tab = 1;
 
 void setup(){
    size(960,640);
