@@ -1,4 +1,3 @@
-//int Tab = 1;
 
 void setup(){
    size(960,640);
@@ -26,7 +25,6 @@ void mouseReleased(){
   releasedRobotButtons();
 }
 void keyPressed(){
-  //println(key,keyCode);
   
   switch (key){
     case '0':

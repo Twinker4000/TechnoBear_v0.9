@@ -89,7 +89,10 @@ boolean isNumber(char ch) {
   else return false;
 }
 
+long old_millis = 0;
 void SendMessage(String Send){
+  if (old_millis>millis())return;
+  old_millis=millis()+500;
   if (!PortOn)return;
   ConsoleLogTime(Send);
   //println(Send);
