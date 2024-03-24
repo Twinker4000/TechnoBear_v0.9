@@ -3,7 +3,7 @@ ButtonRect butKHelp   = new ButtonRect(240, 363, 70, 32, "butKHelpClick");
 ButtonRect butK1     = new ButtonRect(10, 402, 70, 52, "butK1Click");
 ButtonRect butK2     = new ButtonRect(87, 402, 70, 52, "butK2Click");
 ButtonRect butK3     = new ButtonRect(163, 402, 70, 52, "butK3Click");
-ButtonRect butKFind  = new ButtonRect(240, 402, 70, 52, "butKFindClick");
+ButtonRect butKMap  = new ButtonRect(240, 402, 70, 52, "butKMapClick");
 
 ButtonRect butK4     = new ButtonRect(10, 461, 70, 52, "butK4Click");
 ButtonRect butK5     = new ButtonRect(87, 461, 70, 52, "butK5Click");
@@ -42,7 +42,7 @@ void initConsoleButtons(){
   butKHelp.SetSvgFile("k-on.svg","k-off.svg");
   butKDel.SetSvgFile("k-on.svg","k-off.svg");
   butKStop.SetSvgFile("kc-on.svg","k-off.svg");
-  butKFind.SetSvgFile("k-on.svg","k-off.svg");
+  butKMap.SetSvgFile("k-on.svg","k-off.svg");
   
   a_LCDNova = loadFont("a_LCDNova-48.vlw");
   console_png = loadImage("Console.png");
@@ -68,7 +68,7 @@ void drawConsoleButtons(){
   butKHelp.DrawButton();
   butKDel.DrawButton();
   butKStop.DrawButton();
-  butKFind.DrawButton();
+  butKMap.DrawButton();
 }
 
 void pressedConsoleButtons(){
@@ -88,7 +88,7 @@ void pressedConsoleButtons(){
   butKHelp.Pressed();
   butKDel.Pressed();
   butKStop.Pressed();
-  butKFind.Pressed();
+  butKMap.Pressed();
 }
 
 void releasedConsoleButtons(){
@@ -108,7 +108,7 @@ void releasedConsoleButtons(){
   butKHelp.Released();
   butKDel.Released();
   butKStop.Released();
-  butKFind.Released();
+  butKMap.Released();
 }
 
 void drawConsole(){
@@ -211,13 +211,16 @@ void butKDelClick(){
   new_massage="";
 }
 
-void butKFindClick(){
-  SendMessage("0099*");
-}
+
 void butKStopClick(){
   SendMessage("0000*");
 }
 
 void butKHelpClick(){
    UseHelp=!UseHelp; 
+}
+
+void butKMapClick(){
+  if (Tab=="Map")Tab="Robot";
+  else Tab="Map";
 }

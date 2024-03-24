@@ -84,6 +84,7 @@ PImage SonarOff_png;
 
 void drawRobot(){
   image(MapRobot_png,320,0);
+  if (UseHelp)image(Help_png,320,0);
   switch (usingNum){
     case 0:
       image(Num00_png,619,550);
@@ -106,7 +107,6 @@ void drawRobot(){
   }
   if (usingNum == 0) image(SonarOff_png,320,0);
   else image(SonarOn_png,320,0);
-  if (UseHelp)image(Help_png,320,0);
   
   butSonar0.DrawButton();
   butSonar30.DrawButton();

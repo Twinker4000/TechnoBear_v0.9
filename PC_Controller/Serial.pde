@@ -5,6 +5,7 @@ boolean PortOn=false;
 
 int ID, Number, Command, DataLen = 0;
 
+
 void InitSerial(){      //Сохранение доступных портов в массив
   println("Activ ports:");
   ConsoleLog("Activ ports:");
@@ -90,6 +91,7 @@ boolean isNumber(char ch) {
 }
 
 long old_millis = 0;
+
 void SendMessage(String Send){
   if (old_millis>millis())return;
   old_millis=millis()+500;
@@ -97,4 +99,5 @@ void SendMessage(String Send){
   ConsoleLogTime(Send);
   //println(Send);
   port.write(Send);
+  MapCommand(Send);
 }
